@@ -12,11 +12,15 @@ public class Loja {
 				carro.getAno(), carro.getValorAproximado(),carro.getDono()));
 	}
 	
-	public void pesquisarCarros(String placa) {
+	public void pesquisarCarrosPlaca(String placa) {
+		ArrayList <Carro> carroResult = new ArrayList();
 		for(Carro aux: carro) {
 			if(aux.getPlaca().equals(placa)) {
 				System.out.println("Placa encontrada: "+aux.toString());
 			}else {
+				carroResult.add(aux);
+			}
+			if(carroResult.size()== carro.size()) {
 				System.out.println("Placa não encontrada!");
 			}
 		}
@@ -24,10 +28,14 @@ public class Loja {
 	}
 	
 	public void pesquisarMarcaModelo(int marca, String modelo) {
+		ArrayList <Carro> carroResult = new ArrayList();
 		for(Carro aux: carro) {
 			if(aux.getMarca()==aux.selecionarMarca(marca) && aux.getModelo().equals(modelo)) {
 				System.out.println("Modelo e marca encontrados:"+ aux.toString());
 			}else {
+				carroResult.add(aux);
+			}
+			if(carroResult.size()== carro.size()) {
 				System.out.println("O carro dessa marca e modelo não foi encontrado!");
 			}
 		}
@@ -35,10 +43,14 @@ public class Loja {
 	}
 	
 	public void pesquisarAno(int ano) {
+		ArrayList <Carro> carroResult = new ArrayList();
 		for(Carro aux: carro) {
 			if(aux.getAno()==ano) {
 				System.out.println("Carro do ano encontrado: "+ aux.toString());
 			}else {
+				carroResult.add(aux);
+			}
+			if(carroResult.size()== carro.size()) {
 				System.out.println("O carro desse ano não foi encontrado!");
 			}
 		}
@@ -49,7 +61,8 @@ public class Loja {
 			System.out.println(aux.toString());
 		}
 	}
-	public String informacoesLoja() {
+	public String informacoesLoja(int quantidade) {
+		setQuantidade(quantidade);
 		return "Loja [ proprietarioLoja=" + proprietarioLoja + ", quantidade=" + getQuantidade()+"]";
 	}
 
@@ -62,7 +75,7 @@ public class Loja {
 	}
 
 	public int getQuantidade() {
-		quantidade= carro.size();
+		//quantidade+= carro.size();
 		return quantidade;
 	}
 

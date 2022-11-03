@@ -69,7 +69,7 @@ public class AplicacaoConcessionaria {
 			case 2:
 				loja.setCarro(listaCarro);
 				placa=(JOptionPane.showInputDialog("Digite a placa a ser pesquisada"));
-				loja.pesquisarCarros(placa);
+				loja.pesquisarCarrosPlaca(placa);
 				
 				operacao=menuInteracao(interacao);
 				break;
@@ -96,7 +96,7 @@ public class AplicacaoConcessionaria {
 				operacao=menuInteracao(interacao);
 				break;
 			case 6:
-				System.out.println(loja.informacoesLoja());
+				System.out.println(loja.informacoesLoja(listaCarro.size()));
 				operacao=menuInteracao(interacao);
 				break;
 			default:
